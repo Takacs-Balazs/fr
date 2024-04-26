@@ -1,0 +1,205 @@
+/* Alap stílus - Mobil eszközökre optimalizált */
+body {
+    background-color: rgb(224, 230, 236);
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Mobil-barát betűtípus */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Minden középre igazítva */
+}
+
+#logo {
+    width: 50%; /* A logó mérete mobilon */
+    max-width: 200px; /* Maximum méret a logóhoz */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.kepDiv {
+    margin: 10px 0;
+    width: fit-content;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-auto-flow: row;
+}
+
+.kep {
+    width: 300px;
+    margin-bottom: 10px;
+    height: auto;
+    border-radius: 10%;
+}
+
+
+.konténer {
+    display: flex;
+    flex-direction: column; /* Oszlopos elrendezés mobilhoz */
+    justify-content: center;
+    align-items: center; /* Középre igazítás */
+    margin: 20px 0;
+}
+
+.kártya {
+    width: 90%; /* A kártyák szélessége mobilon */
+    margin: 10px;
+    padding: 15px;
+    background-color: #cacaca;
+    border-radius: 8px;
+    border: 1px solid #3f3f3f;
+    box-shadow: 0 0 10px rgba(127, 127, 127, 0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.lehetőségek {
+    display: flex;
+    flex-direction: column; /* Oszlopos elrendezés mobilhoz */
+    align-items: center; /* Középre igazítás */
+    gap: 10px;
+}
+
+.lehetőség {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #3f3f3f;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.lehetőség:hover {
+    background-color: rgb(51, 51, 51);
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Csökkentett szélesség a mobil eszközökhöz */
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(117, 117, 117);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+/* Média lekérdezés - Táblagépek és nagyobb eszközök */
+@media only screen and (min-width: 768px) {
+    /* Táblagépeken és nagyobb eszközökön változik a dizájn */
+    .konténer {
+        flex-direction: row; /* Soros elrendezés */
+        flex-wrap: wrap;
+        justify-content: center; /* Középre igazítás */
+        align-items: flex-start;
+        margin-bottom: 40px; /* Margin táblagépeken */
+    }
+
+    .kepDiv {
+        margin: 10px 0;
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-auto-flow: column;
+        margin-left: 20px;
+    }
+    .kep{
+        padding: 10px;
+    }
+    .kártya {
+        width: 70%; /* Szélesebb kártyák táblagépeken */
+        margin: 10px;
+        padding: 20px;
+    }
+
+    
+
+    .lehetőségek {
+        flex-direction: row; /* Soros elrendezés táblagépeken */
+        justify-content: center; /* Középre igazítás */
+    }
+
+    #logo {
+        width: 60%; /* Kisebb logó méret desktopon */
+        max-width: 250px; /* Maximális logó méret */
+        position: sticky;
+
+    }
+}
+select {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;  /* Kerekített sarkok */
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);  /* Árnyék */
+    transition: all 0.3s ease;  /* Sima átmenet */
+    background-color: #f9f9f9;  /* Világos háttérszín */
+}
+
+select:hover {
+    border-color: #888888;  /* Változtatott szín rámutatáskor */
+}
+
+select:focus {
+    border-color: #555555;  /* Aktív elem hatás */
+    outline: none;  /* A külső körvonal eltávolítása fókusz esetén */
+}
+
+/* Gomb stílus */
+button {
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;  /* Kerekített sarkok */
+    border: none;  /* Nincsenek élek */
+    background-color: #000000;  /* Zöld gomb */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;  /* Sima átmenet */
+}
+
+button:hover {
+    background-color: rgb(76, 0, 128);}
+
+/* Felugró ablak stílus */
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 10px;  /* Kerekített sarkok */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Árnyék */
+    text-align: center;
+}
+
+.alert button {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;  /* Kerekített sarkok */
+    border: none;  /* Nincsenek élek */
+    background-color: #646464;  /* Piros gomb */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;  /* Sima átmenet */
+}
+
+.alert button:hover {
+    background-color: #dddddd;  /* Sötétebb piros rámutatáskor */
+}
